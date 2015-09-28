@@ -22,9 +22,11 @@ class Shipments
       @destination << row["Destination"].to_s
       @crates << row["Number of crates"].to_i
       @shipped<< row["What got shipped"].to_s
-      if row["Destination"]=="Earth"||row["Destination"]=="Uranus"||row["Destination"]=="Mars"
+      if row["Destination"]=="Earth"
         @earth+=row["Number of crates"].to_i*row["Profit per crate"].to_i
+        elsif row["Destination"]=="Uranus"
         @uranus+=row["Number of crates"].to_i*row["Profit per crate"].to_i
+        elsif row["Destination"]=="Mars"
         @mars+=row["Number of crates"].to_i*row["Profit per crate"].to_i
     else
         @leela+=row["Number of crates"].to_i*row["Profit per crate"].to_i
