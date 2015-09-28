@@ -17,7 +17,7 @@ class Shipments
     @mars=0
     @leela=0
 
-    CSV.foreach("shipping.csv", headers: true) do |row|
+        CSV.foreach("shipping.csv", headers: true) do |row|
       @profits << row["Profit per crate"].to_i
       @destination << row["Destination"].to_s
       @crates << row["Number of crates"].to_i
@@ -68,5 +68,9 @@ class Shipments
 
 end
 
+
+
 s= Shipments.new
 s.bonuses
+s.trips_piloted
+s.profit
